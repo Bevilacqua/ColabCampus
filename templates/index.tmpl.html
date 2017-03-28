@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+{{template "header.tmpl.html"}}
+<body>
+  <div class="banner">
+    <img height="250px" src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/cci_banner.svg" alt="CCI">
+    <h2 class="display-1">Collaborative Campus Initiative</h2>
+  </div>
+  <div class="content">
+    <h1>The Pledge</h1>
+    <br />
+    <p class="lead pledge">
+      &nbsp;I pledge to work together, not against, my peers.
+      I'll help my fellow classmates understand the material and ask
+      for help when necessary. I'll be respectful of others that
+      struggle with the content by creating a safe, non-judgmental
+      learning environment.
+      <br /><br />
+      &nbsp;I see the importance of an education as more than just passing
+      a class, but understanding the material. I pledge to stand up against
+      the traditional, competitive atmosphere of a college campus.
+    </p>
+    <div class="center">
+      <form class="form-inline">
+        <label class="sr-only" for="inlineFormInput">Name</label>
+        <input type="text" class="form-control" id="Name" placeholder="Name">
+
+        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <input type="text" class="form-control" id="Email" placeholder="Email">
+        </div>
+
+        <select class="form-control" id="Status">
+          <option selected value="incoming">Incoming Student</option>
+          <option value="current">Current Student</option>
+        </select>
+        <button type="submit" class="btn">Pledge</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* Organization */
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: #C34827;
+}
+
+/* Classes */
+.banner {
+  width: 100%;
+  max-height: 150px;
+  position: relative;
+  background-color: #DF7033;
+}
+
+.ban-image {
+  position: absolute;
+}
+
+.content {
+  padding-top: 100px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.pledge {
+  font-size: xx-large;
+}
+
+.select {
+  height: 100%;
+}
+
+/* Utility */
+
+.center {
+  text-align: center;
+}
+
+.display-1 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  color: white;
+  z-index: 100;
+  font-size: 6rem;
+}
