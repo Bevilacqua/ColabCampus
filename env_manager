@@ -1,0 +1,11 @@
+#!/bin/bash
+# Pull the ENV variables from heroku
+
+clear
+echo -n "" > .env
+echo "Pulling from Heroku."
+heroku config:get MC_API_KEY -s >> .env --app colab-campus
+heroku config:get MC_LIST_ID -s >> .env --app colab-campus
+heroku config:get MC_URL -s >> .env --app colab-campus
+
+echo ".env created."
