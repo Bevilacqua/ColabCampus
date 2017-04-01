@@ -2,14 +2,20 @@
 <html>
 {{template "header.tmpl.html"}}
 <body>
-  <div class="banner">
+  <div class="banner" id="pledge_head">
     <img height="250px" src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/cci_banner.svg" alt="CCI">
     <h3 class="display-1">Collaborative Campus Initiative</h3>
+    <ul class="scrollNav">
+      <li><a href="#pledge_head">The Pledge</a></li>
+      <li><a href="#sponsors_head">Sponsors</a></li>
+      <li><a href="#prizes_head">Prizes</a></li>
+      <li><a href="#tips_head">Tips</a></li>
+    </ul>
   </div>
   <div class="content">
     <h1>The Pledge</h1>
     <br />
-    <p class="lead pledge">
+    <p class="lead pledge" id="pledge">
       &nbsp;I pledge to work together, not against, my peers.
       I will help my fellow classmates understand the material and ask
       for help when necessary. I will be respectful of others that
@@ -23,28 +29,133 @@
     <div id="loading" class="center">
       loading...
     </div>
-    <div id="form" class="center">
+    <div class="center mx-auto">
       <div id="status-message" class="center">
       </div>
-      <form class="form-inline">
-        <label class="sr-only" for="inlineFormInput">Name</label>
-        <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
+      <form id="form" class="form-inline align-center">
+        <div class="mb-2 mr-sm-1 mb-sm-0">
+          <label class="sr-only" for="inlineFormInput">Name</label>
+          <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
+        </div>
 
-        <label class="sr-only" for="inlineFormInputGroup">Email</label>
-        <div class="input-group">
+        <div class="mb-2 mr-sm-1 mb-sm-0">
+          <label class="sr-only" for="inlineFormInputGroup">Email</label>
           <input type="email" class="form-control" id="Email" name="email" placeholder="Email">
         </div>
 
-        <select class="form-control" name="uType" id="Status">
-          <option selected value="incoming">Incoming Student</option>
-          <option value="current">Current Student</option>
-        </select>
-        <button type="submit" id="submit" class="btn">Pledge</button>
+        <div class="mb-2 mr-sm-1 mb-sm-0">
+          <select class="form-control" name="uType" id="Status">
+            <option selected value="incoming">Incoming Student</option>
+            <option value="current">Current Student</option>
+          </select>
+        </div>
+
+        <div class="mb-2 mr-sm-2 mb-sm-0">
+          <button type="submit" id="submit" class="btn">Pledge</button>
+        </div>
       </form>
     </div>
 
     <div class="break">&nbsp;</div>
-    <h2>Sponsors</h2>
+    <h2 id="sponsors_head">Sponsors</h2>
+    <div id="sponsors" class="mx-auto">
+      <div style="margin: auto 1.5em; display: inline-block;">
+        <a href="http://www.templecoffee.com"><img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/temple_logo.jpg" class="sponsor_image rounded" alt="Temple Coffee Roasters"></a>
+        <a href="http://www.study.space"><img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/Logo/green/logogreen_open3.png" class="sponsor_image rounded " alt="Study Space"></a>
+        <a href="http://www.stickermule.com"><img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/stickermule_logo.svg" class="sponsor_image rounded" alt="Sticker Mule"></a>
+      </div>
+      <!-- Mobile -->
+      <div style="margin: auto 1.5em; display: inline-block;">
+        <a href="http://www.templecoffee.com"><img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/temple_logo.jpg" class="sponsor_image_mobile rounded" alt="Temple Coffee Roasters"></a>
+        <a href="http://www.study.space"><img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/Logo/green/logogreen_open3.png"  class="sponsor_image_mobile rounded" alt="Study Space"></a>
+        <a href="http://www.stickermule.com"><img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/stickermule_logo.svg" class="sponsor_image_mobile rounded" alt="Sticker Mule"></a>
+      </div>
+      <p class="lead" style="margin-top: 30px;">
+        Thank you to our great sponsors for helping with CCI!
+        They have offered some great prizes for signing the pledge!
+        We will be handing out prizes on XXXX DATe XXXX so make sure to sign soon.
+        We have a FB event (insert link) up to keep track of everything check it out!
+      </p>
+    </div>
+
+    <div class="break">&nbsp;</div>
+    <h2 id="prizes_head">Prizes</h2>
+    <div id="prizes">
+      <div class="card-group">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Study Blue Year Long Membership (10)</h4>
+            <p class="card-text">
+              [Insert name of Sam's thing] has donated 10 year long study blue pro memberships.
+              That means you can use Study Blue with no ads, borrow unlimited cards and notes,
+              make use of offline mode in iOS and Android, and more!
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Course Hero Subscription (IF WE LAND IT) (X)</h4>
+            <p class="card-text">
+              Course Hero. Course Hero. Course Hero.
+              Course Hero. Course Hero. Course Hero.
+              Course Hero. Course Hero. Course Hero.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-group">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">$25 Temple Gift Cards (3)</h4>
+            <p class="card-text">
+              Three random students who sign the pledge will get a $25 gift card
+              to Temple Coffee Roasters! Head to Temple @ <strong>239 G St.</strong>
+              to find a great place to study with some top notch coffee and tea.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Dope AF Stickers (Unlimited)</h4>
+            <p class="card-text">
+              Sticker Mule hooked us up with some awesome stickers. Let us know
+              you want one and we'll get one to you!
+              <a href="http://facebook.com/findastudyspace" target="_blank">FB Message us</a>
+              or <a href="mailto:jacob.bevilacqua@study.space" target="_blank">email us</a>.
+            </p>
+            <img class="card-img-bottom center-block" src="https://s3-us-west-1.amazonaws.com/studyspaceimages/CCI/stickers.png" alt="Stickers!">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Study Space Shot Glasses (10)</h4>
+            <p class="card-text">
+              We got some dope shot glasses to hand out to 10 random signers! So you know... Sign.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="break">&nbsp;</div>
+    <h2 id="tips_head">Tips</h2>
+    <p class="lead center">
+      Here are some tips
+    </p>
+
+    <div class="break">&nbsp;</div>
+  </div>
+  <div class="footer center" style="margin-bottom: 25px;">
+    <a href="https://github.com/Bevilacqua/ColabCampus">Open Source</a> (<a href="https://github.com/Bevilacqua/ColabCampus/blob/master/LICENSE">LICENSE</a>)
+    <a href="https://study.space"><img height="42px" width="26px" class="fa-2x"src="https://s3-us-west-1.amazonaws.com/studyspaceimages/Logo/pin_logo.png" alt="Pin logo"></a> &nbsp;
+    <a style="color: black !important;" href="https://www.facebook.com/findastudyspace"><i class="fa fa-facebook-official fa-2x light_marg_sides" aria-hidden="true"></i></a>
+    <a style="color: black !important;" href="https://twitter.com/findastudyspace"><i class="fa fa-twitter-square fa-2x light_marg_sides" aria-hidden="true"></i></a>
+    <a style="color: black !important;" href="https://www.instagram.com/findastudyspace/"><i class="fa fa-instagram fa-2x light_marg_sides" aria-hidden="true"></i></a>
   </div>
 </body>
 </html>

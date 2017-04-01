@@ -5,6 +5,10 @@ h1, h2 {
   color: #C34827;
 }
 
+a {
+  color: #C34827;
+}
+
 /* Classes */
 .banner {
   width: 100%;
@@ -36,6 +40,49 @@ h1, h2 {
   border-bottom: 1px solid #DF7033;
 }
 
+@media screen and (max-device-width: 600px) {
+  .sponsor_image { display: none; }
+  .scrollNav { display: none; }
+}
+
+@media screen and (min-device-width: 601px) {
+  .sponsor_image_mobile { display: none; }
+}
+
+.scrollNav {
+  position: fixed;
+  list-style-type: none;
+}
+
+.sponsor_image {
+  height: 75px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.sponsor_image_mobile {
+  height: 75px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+#sponsors {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+#prizes {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+#form {
+  align-items: center;
+  justify-content: center;
+}
+
 /* Utility */
 
 .center {
@@ -54,10 +101,15 @@ h1, h2 {
 
 .display-1 {
   width: 100%;
+  padding-top: 15px;
   text-align: center;
   position: absolute;
   top: 0;
   color: white;
   z-index: 100;
-  font-size: 6rem;
+  font-size: 4rem;
+}
+
+.clear {
+  clear: both;
 }
