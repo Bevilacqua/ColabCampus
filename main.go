@@ -21,7 +21,6 @@ func SubmitToMailChimp(name string, email string, uType string) int {
     log.Fatal("NewRequest: ", err)
     return http.StatusInternalServerError
   }
-  log.Println(string(bodyStr))
   req.Header.Add("Authorization", "apikey " + os.Getenv("MC_API_KEY"))
 
   // Add client
@@ -46,6 +45,12 @@ func SubmitToMailChimp(name string, email string, uType string) int {
   return stat
 }
 
+type FormSubmit struct {
+  Name     string `form:"name" json:"name"`
+  Email    string `form:"email" json:"email"`
+  UType    string `form:"uType" json:"uType"`
+}
+
 func main() {
   // Creates a gin router with default middleware:
   // logger and recovery (crash-free) middleware
@@ -58,31 +63,32 @@ func main() {
     c.HTML(http.StatusOK, "index.tmpl.html",nil)
   })
 
-  router.GET("/register_user", func(c *gin.Context) {
-    // Validate Input!
-/*
-    msg.Message = "Missing Information"
-    msg.Status = http.StatusBadRequest
-*/
+  router.POST("/register_user", func(c *gin.Context) {
 
-    // Make API Call
-    status := SubmitToMailChimp(c.Query("name"), c.Query("email"), c.Query("uType"))
-    // Respond
     var msg struct {
-    			Message string
-    			Status  int
+          Message string
+          Status  int
     }
 
-    // Added user successfully
-    if status == 200 {
-      msg.Message = "Student added."
-      msg.Status = status
+    var data FormSubmit
+    if c.Bind(&data) == nil && data.Name != "" && data.Email != "" && data.UType != "" {
+      // Make API Call
+      status := SubmitToMailChimp(data.Name, data.Email, data.UType)
+      // Added user successfully
+      if status == 200 {
+        msg.Message = "Student added."
+        msg.Status = status
+      } else {
+        // User already on list
+        msg.Message = "Student already on mailing list."
+        msg.Status = http.StatusFound
+      }
     } else {
-      // User already on list
-      msg.Message = "Student already on mailing list."
-      msg.Status = http.StatusFound
+      msg.Message = "Missing Params or error parsing."
+      msg.Status = http.StatusBadRequest
     }
 
+    // Respond
     c.JSON(http.StatusOK, msg)
   })
   // By default it serves on :8080 unless a

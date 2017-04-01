@@ -1,5 +1,5 @@
 /* Organization */
-h1 {
+h1, h2 {
   text-align: center;
   text-decoration: underline;
   color: #C34827;
@@ -31,10 +31,25 @@ h1 {
   height: 100%;
 }
 
+.break {
+  margin: 30px 15%;
+  border-bottom: 1px solid #DF7033;
+}
+
 /* Utility */
 
 .center {
   text-align: center;
+}
+
+.error {
+  color: red;
+  font-weight: bolder;
+}
+
+.success {
+  color: green;
+  font-weight: bolder;
 }
 
 .display-1 {

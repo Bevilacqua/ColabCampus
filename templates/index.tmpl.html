@@ -11,8 +11,8 @@
     <br />
     <p class="lead pledge">
       &nbsp;I pledge to work together, not against, my peers.
-      I'll help my fellow classmates understand the material and ask
-      for help when necessary. I'll be respectful of others that
+      I will help my fellow classmates understand the material and ask
+      for help when necessary. I will be respectful of others that
       struggle with the content by creating a safe, non-judgmental
       learning environment.
       <br /><br />
@@ -20,23 +20,31 @@
       a class, but understanding the material. I pledge to stand up against
       the traditional, competitive atmosphere of a college campus.
     </p>
-    <div class="center">
+    <div id="loading" class="center">
+      loading...
+    </div>
+    <div id="form" class="center">
+      <div id="status-message" class="center">
+      </div>
       <form class="form-inline">
         <label class="sr-only" for="inlineFormInput">Name</label>
-        <input type="text" class="form-control" id="Name" placeholder="Name">
+        <input type="text" class="form-control" id="Name" name="name" placeholder="Name">
 
         <label class="sr-only" for="inlineFormInputGroup">Email</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="Email" placeholder="Email">
+          <input type="email" class="form-control" id="Email" name="email" placeholder="Email">
         </div>
 
-        <select class="form-control" id="Status">
+        <select class="form-control" name="uType" id="Status">
           <option selected value="incoming">Incoming Student</option>
           <option value="current">Current Student</option>
         </select>
-        <button type="submit" class="btn">Pledge</button>
+        <button type="submit" id="submit" class="btn">Pledge</button>
       </form>
     </div>
+
+    <div class="break">&nbsp;</div>
+    <h2>Sponsors</h2>
   </div>
 </body>
 </html>
