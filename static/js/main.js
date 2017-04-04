@@ -31,7 +31,7 @@ $(document).ready(function() {
       var status = data.Status
       if(status == 200)
       {
-        $("#form").replaceWith("<p class='center success'>Pledge Signed! You a boss.</p>");
+        $("#form-container").replaceWith("<p class='center success'>Pledge Signed! You a boss.</p>");
         console.log("Added");
       } else if(status == 302) {
         $("#status-message").replaceWith("<p class='center error'>Ahhh! Not added. Already signed or invalid email!</p>");
@@ -50,10 +50,10 @@ $(document).ready(function() {
 $(document).on({
     ajaxStart: function() {
        $("#loading").show();
-       $("#form").hide();
+       $("#form-container").hide();
     },
     ajaxStop: function() {
-      $("#form").show();
+      $("#form-container").show();
       $("#loading").hide();
     }
 });
